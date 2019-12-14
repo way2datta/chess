@@ -35,11 +35,10 @@
     min-height: 25px;
     min-width: 25px;
     padding: 20px;
-    background-color: #fff;
-    color: #000;
     border: 1px solid #000;
     cursor: pointer;
 }
+
 .black {
     background-color: #000;
     color: #fff;
@@ -57,4 +56,17 @@
     color: #fff;
     background-color: #4caf50;
     border: 1px solid grey;
+}
+.cell__selected {
+    font-weight: bolder;
+    color: #fff;
+    background-color: rgb(224, 124, 16);
+    border: 1px solid grey;
+}
+.cell__predicted {
+    font-weight: bolder;
+    color: #fff;
+    background-color: #4caf50;
+    border: 1px solid grey;
+    opacity: 0.6;
 }

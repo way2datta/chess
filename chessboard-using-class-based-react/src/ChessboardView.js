@@ -5,15 +5,23 @@ import Cell from './Cell';
 export default class ChessboardView extends Component {
   state = {
     fileIndex: -1,
-    rankIndex: -1
+    rankIndex: -1,
+    selectedPosition: {}
   }
+
   onCellMouseEnter = (fileIndex, rankIndex) => {
     this.setState({ fileIndex, rankIndex });
+  }
+
+  onCellSelect = (fileIndex, rankIndex) => {
+    const selectedPosition = { fileIndex, rankIndex }
+    this.setState({ selectedPosition });
   }
 
   onCellMouseLeave = () => {
     this.setState({ fileIndex: -1, rankIndex: -1 });
   }
+
   renderEmptyBoard() {
     return Chessboard.fileTitles.map((fileTitle, fileIndex) => (
       <div key={fileTitle} className="row">
@@ -27,6 +35,8 @@ export default class ChessboardView extends Component {
               fileTitle={fileTitle}
               onCellMouseEnter={this.onCellMouseEnter}
               onCellMouseLeave={this.onCellMouseLeave}
+              onCellSelect={this.onCellSelect}
+              selectedPosition={this.state.selectedPosition}
             />
           ))
         }

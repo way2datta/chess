@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class Cell extends Component {
-  getAdditionalCssClasses() {
+  getInitialCellCssClasses() {
     const { fileIndex, rankIndex } = this.props;
     if (fileIndex % 2 === 0) {
       return rankIndex % 2 === 0 ? 'white' : 'black';
@@ -10,16 +10,35 @@ export default class Cell extends Component {
     return rankIndex % 2 === 0 ? 'black' : 'white';
   }
 
+  getSelectedCellCssClasses = () => {
+    const {
+      selectedPosition, fileIndex, rankIndex
+    } = this.props;
+    if (selectedPosition.fileIndex === fileIndex &&
+      selectedPosition.rankIndex === rankIndex) {
+      return "cell__selected";
+    }
+    return "";
+  }
+
+  getCellAdditionalCssClasses = () => {
+    const initialCellClass = this.getInitialCellCssClasses();
+    const selectedCellClass = this.getSelectedCellCssClasses();
+    return `${selectedCellClass} ${initialCellClass}`;
+  }
+
+
   render() {
     const {
       rankTitle, fileTitle, fileIndex, rankIndex, onCellMouseEnter,
-      onCellMouseLeave,
+      onCellMouseLeave, onCellSelect
     } = this.props;
     return (
       <div
-        className={`cell ${this.getAdditionalCssClasses()}`}
+        className={`cell ${this.getCellAdditionalCssClasses()}`}
         onMouseEnter={() => onCellMouseEnter(fileIndex, rankIndex)}
         onMouseLeave={() => onCellMouseLeave(fileIndex, rankIndex)}
+        onClick={() => onCellSelect(fileIndex, rankIndex)}
       >
         {`${`${rankTitle}${fileTitle}`}`}
       </div>
@@ -34,4 +53,5 @@ Cell.propTypes = {
   rankTitle: PropTypes.string.isRequired,
   onCellMouseEnter: PropTypes.func.isRequired,
   onCellMouseLeave: PropTypes.func.isRequired,
+  onCellSelect: PropTypes.func.isRequired
 };
