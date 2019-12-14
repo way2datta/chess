@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Chessboard from './Chessboard';
 
 export default class ChessboardView extends Component {
-  renderEmptyBoard() {
+  static renderEmptyBoard() {
     return Chessboard.fileTitles.map((fileTitle) => (
       <div key={fileTitle} className="row">
         {
@@ -15,7 +15,7 @@ export default class ChessboardView extends Component {
   render() {
     return (
       <div className="chessboard">
-        {this.renderEmptyBoard()}
+        {ChessboardView.renderEmptyBoard()}
       </div>
     );
   }
