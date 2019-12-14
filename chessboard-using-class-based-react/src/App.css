@@ -1,38 +1,45 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 45px;
+}
 .pieces-list {
-  list-style: none;
-  padding: 0;
-  display: block;
+    list-style: none;
+    padding: 0;
+    display: block;
 }
 .pieces-list li {
-  display: inline;
-  min-height: 40px;
-  min-width: 20px;
-  margin: 20px;
-  padding: 20px;
-  background-color: gray;
-  color: aliceblue;
+    display: inline;
+    min-height: 40px;
+    min-width: 20px;
+    margin: 3px;
+    padding: 20px;
+    background-color: gray;
+    color: aliceblue;
+    cursor: pointer;
 }
 
 .chessboard {
-  margin: 60px;
+    margin: 60px;
 }
 .chessboard .row {
-  display: flex;
+    display: flex;
 }
 .cell {
-  display: inline;
-  min-height: 25px;
-  min-width: 25px;
-  padding: 20px;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #000;
+    display: inline;
+    min-height: 25px;
+    min-width: 25px;
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
 }
 .black {
-  background-color: #000;
-  color: #fff;
+    background-color: #000;
+    color: #fff;
 }
 .white {
-  color: #000;
-  background-color: #fff;
+    color: #000;
+    background-color: #fff;
 }
