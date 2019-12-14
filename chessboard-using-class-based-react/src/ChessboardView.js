@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Chessboard from './Chessboard';
-import Cell from "./Cell";
+import Cell from './Cell';
+
 export default class ChessboardView extends Component {
   renderEmptyBoard() {
     return Chessboard.fileTitles.map((fileTitle, fileIndex) => (
-      <div key={fileTitle} className='row'>
+      <div key={fileTitle} className="row">
         {
           Chessboard.rankTitles.map((rankTitle, rankIndex) => (
             <Cell
@@ -16,7 +17,7 @@ export default class ChessboardView extends Component {
             />
           ))
         }
-      </div >
+      </div>
     ));
   }
 
