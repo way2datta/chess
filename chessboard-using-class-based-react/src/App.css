@@ -1,0 +1,16 @@
+.pieces-list{
+    list-style: none;
+    padding: 0;
+}
+.pieces-list li{
+    display: inline;
+    min-height: 40px;
+    min-width: 20px;
+    margin: 20px;
+    padding: 20px;
+    background-color: gray;
+    color: aliceblue;
+}
+.pieces-list li:first-child{
+    margin-left: 0;
+}   
