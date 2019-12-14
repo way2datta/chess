@@ -11,11 +11,15 @@ export default class Cell extends Component {
   }
 
   render() {
-    const { rankTitle, fileTitle, fileIndex, rankIndex } = this.props;
+    const {
+      rankTitle, fileTitle, fileIndex, rankIndex, onCellMouseEnter,
+      onCellMouseLeave,
+    } = this.props;
     return (
-      <div className={`cell ${this.getAdditionalCssClasses()}`}
-        onMouseEnter={() => this.props.onCellMouseEnter(fileIndex, rankIndex)}
-        onMouseLeave={() => this.props.onCellMouseLeave(fileIndex, rankIndex)}
+      <div
+        className={`cell ${this.getAdditionalCssClasses()}`}
+        onMouseEnter={() => onCellMouseEnter(fileIndex, rankIndex)}
+        onMouseLeave={() => onCellMouseLeave(fileIndex, rankIndex)}
       >
         {`${`${rankTitle}${fileTitle}`}`}
       </div>
@@ -28,4 +32,6 @@ Cell.propTypes = {
   rankIndex: PropTypes.number.isRequired,
   fileTitle: PropTypes.string.isRequired,
   rankTitle: PropTypes.string.isRequired,
+  onCellMouseEnter: PropTypes.func.isRequired,
+  onCellMouseLeave: PropTypes.func.isRequired,
 };

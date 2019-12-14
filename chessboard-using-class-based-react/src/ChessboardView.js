@@ -40,7 +40,7 @@ export default class ChessboardView extends Component {
     return (
       <div className="chessboard">
         {this.renderEmptyBoard()}
-        {fileIndex != -1 && positionText}
+        {fileIndex !== -1 && positionText}
       </div>
     );
   }
