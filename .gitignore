@@ -102,3 +102,4 @@ dist
 
 # TernJS port file
 .tern-port
+chessboard-using-class-based-react/package-lock.json
