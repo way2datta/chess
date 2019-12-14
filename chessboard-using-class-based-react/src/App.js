@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 import PiecesList from "./PiecesList";
-import Chessboard from "./Chessboard";
+import ChessboardView from "./ChessboardView";
 
 function App() {
   return (
     <div className="App">
         <PiecesList />
-        <Chessboard />
+        <ChessboardView />
     </div>
   );
 }

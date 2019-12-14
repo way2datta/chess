@@ -1,6 +1,7 @@
 .pieces-list{
     list-style: none;
     padding: 0;
+    display: block;
 }
 .pieces-list li{
     display: inline;
@@ -11,6 +12,19 @@
     background-color: gray;
     color: aliceblue;
 }
-.pieces-list li:first-child{
-    margin-left: 0;
+
+.chessboard{
+    margin: 60px;
+}  
+.chessboard .row{
+    display: flex;
 }   
+.cell{
+    display: inline;
+    min-height: 25px;
+    min-width: 25px;
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}

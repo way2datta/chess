@@ -7,8 +7,8 @@ export default class PiecesList extends Component {
         return (
             <ul className="pieces-list">
                 {
-                    pieces.map(function (piece) {
-                        return <li> {piece.name}</li>
+                    pieces.map((piece) => {
+                        return <li key={piece.name}> {piece.name}</li>
                     })
                 }
             </ul>
