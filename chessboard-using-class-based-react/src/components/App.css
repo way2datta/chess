@@ -88,3 +88,10 @@
 .black.-highlight:hover {
     background-color: #000;
 }
+.error {
+    font-weight: bolder;
+    color: #f00;
+}
+.selected-position-text {
+    font-weight: bolder;
+}

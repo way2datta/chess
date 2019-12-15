@@ -43,6 +43,7 @@ export default class App extends Component {
           selectedPiece={selectedPiece}
           onPieceSelect={this.onPieceSelect}
         />
+        {!selectedPiece && <h3 className="error">Please select a piece</h3>}
         {selectedPiece && (
           <ChessboardView
             onCellMouseEnter={this.onCellMouseEnter}
