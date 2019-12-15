@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Chessboard from './Chessboard';
+import Chessboard from './../lib/Chessboard';
 import Cell from './Cell';
 
 export default class ChessboardView extends Component {

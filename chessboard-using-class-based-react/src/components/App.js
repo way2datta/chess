@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import PiecesList from './../components/PiecesList';
+import ChessboardView from './../components/ChessboardView';
+import Chessboard from './../lib/Chessboard';
 import './App.css';
-import PiecesList from './PiecesList';
-import ChessboardView from './ChessboardView';
-import Chessboard from './Chessboard';
 
 export default class App extends Component {
   state = {
