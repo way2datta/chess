@@ -70,3 +70,21 @@
     border: 1px solid grey;
     opacity: 0.6;
 }
+
+.-highlight {
+    font-weight: bolder;
+}
+
+.white.-highlight {
+    background-color: rgba(224, 123, 16, 0.344);
+}
+.white.-highlight:hover {
+    background-color: #fff;
+    color: #000;
+}
+.black.-highlight {
+    background-color: rgba(224, 123, 16, 0.666);
+}
+.black.-highlight:hover {
+    background-color: #000;
+}

@@ -6,7 +6,8 @@ import Cell from './Cell';
 export default class ChessboardView extends Component {
   renderEmptyBoard() {
     const {
-      onCellMouseEnter, onCellMouseLeave, onCellSelect, selectedPosition,
+      onCellMouseEnter, onCellMouseLeave, onCellSelect,
+      selectedPosition, possibleMoves,
     } = this.props;
 
     return Chessboard.fileTitles.map((fileTitle, fileIndex) => (
@@ -23,6 +24,8 @@ export default class ChessboardView extends Component {
               onCellMouseLeave={onCellMouseLeave}
               onCellSelect={onCellSelect}
               selectedPosition={selectedPosition}
+              highlight={possibleMoves.some((x) => x.fileIndex === fileIndex
+                && x.rankIndex === rankIndex)}
             />
           ))
         }
@@ -49,4 +52,5 @@ ChessboardView.propTypes = {
   onCellSelect: PropTypes.func.isRequired,
   fileIndex: PropTypes.number.isRequired,
   rankIndex: PropTypes.number.isRequired,
+  possibleMoves: PropTypes.array.isRequired,
 };

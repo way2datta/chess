@@ -48,6 +48,7 @@ export default class App extends Component {
           selectedPosition={this.state.selectedPosition}
           rankIndex={this.state.rankIndex}
           fileIndex={this.state.fileIndex}
+          possibleMoves={this.state.possibleMoves}
         />
       </div>
     );

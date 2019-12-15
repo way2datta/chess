@@ -24,7 +24,8 @@ export default class Cell extends Component {
   getCellAdditionalCssClasses = () => {
     const initialCellClass = this.getInitialCellCssClasses();
     const selectedCellClass = this.getSelectedCellCssClasses();
-    return `${selectedCellClass} ${initialCellClass}`;
+    const highlightCellClass = this.props.highlight ? "-highlight" : ""
+    return `${selectedCellClass} ${initialCellClass} ${highlightCellClass}`;
   }
 
 
