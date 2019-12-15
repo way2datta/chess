@@ -43,15 +43,17 @@ export default class App extends Component {
           selectedPiece={selectedPiece}
           onPieceSelect={this.onPieceSelect}
         />
-        <ChessboardView
-          onCellMouseEnter={this.onCellMouseEnter}
-          onCellMouseLeave={this.onCellMouseLeave}
-          onCellSelect={this.onCellSelect}
-          selectedPosition={selectedPosition}
-          rankIndex={rankIndex}
-          fileIndex={fileIndex}
-          possibleMoves={possibleMoves}
-        />
+        {selectedPiece && (
+          <ChessboardView
+            onCellMouseEnter={this.onCellMouseEnter}
+            onCellMouseLeave={this.onCellMouseLeave}
+            onCellSelect={this.onCellSelect}
+            selectedPosition={selectedPosition}
+            rankIndex={rankIndex}
+            fileIndex={fileIndex}
+            possibleMoves={possibleMoves}
+          />
+        )}
       </div>
     );
   }
