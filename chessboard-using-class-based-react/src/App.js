@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 import PiecesList from './PiecesList';
 import ChessboardView from './ChessboardView';
+import Chessboard from "./Chessboard";
 
 export default class App extends Component {
   state = {
     selectedPiece: "",
     fileIndex: -1,
     rankIndex: -1,
-    selectedPosition: {}
+    selectedPosition: {},
+    possibleMoves: []
   }
 
   onCellMouseEnter = (fileIndex, rankIndex) => {
@@ -17,7 +19,9 @@ export default class App extends Component {
 
   onCellSelect = (fileIndex, rankIndex) => {
     const selectedPosition = { fileIndex, rankIndex }
-    this.setState({ selectedPosition });
+    const possibleMoves = Chessboard.getPossibleMoves(this.state.selectedPiece,
+      fileIndex, rankIndex);
+    this.setState({ selectedPosition, possibleMoves });
   }
 
   onCellMouseLeave = () => {
@@ -25,6 +29,10 @@ export default class App extends Component {
   }
 
   onPieceSelect = (selectedPiece) => {
+    const { fileIndex, rankIndex } = this.state.selectedPosition;
+
+    // const possibleMoves = Chessboard.getPossibleMoves(this.state.selectedPiece,
+    //   fileIndex, rankIndex);
     this.setState({ selectedPiece });
   }
 
