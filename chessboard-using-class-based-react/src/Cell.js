@@ -12,19 +12,19 @@ export default class Cell extends Component {
 
   getSelectedCellCssClasses = () => {
     const {
-      selectedPosition, fileIndex, rankIndex
+      selectedPosition, fileIndex, rankIndex,
     } = this.props;
-    if (selectedPosition.fileIndex === fileIndex &&
-      selectedPosition.rankIndex === rankIndex) {
-      return "cell__selected";
+    if (selectedPosition.fileIndex === fileIndex
+      && selectedPosition.rankIndex === rankIndex) {
+      return 'cell__selected';
     }
-    return "";
+    return '';
   }
 
   getCellAdditionalCssClasses = () => {
     const initialCellClass = this.getInitialCellCssClasses();
     const selectedCellClass = this.getSelectedCellCssClasses();
-    const highlightCellClass = this.props.highlight ? "-highlight" : ""
+    const highlightCellClass = this.props.highlight ? '-highlight' : '';
     return `${selectedCellClass} ${initialCellClass} ${highlightCellClass}`;
   }
 
@@ -32,7 +32,7 @@ export default class Cell extends Component {
   render() {
     const {
       rankTitle, fileTitle, fileIndex, rankIndex, onCellMouseEnter,
-      onCellMouseLeave, onCellSelect
+      onCellMouseLeave, onCellSelect,
     } = this.props;
     return (
       <div
@@ -54,5 +54,5 @@ Cell.propTypes = {
   rankTitle: PropTypes.string.isRequired,
   onCellMouseEnter: PropTypes.func.isRequired,
   onCellMouseLeave: PropTypes.func.isRequired,
-  onCellSelect: PropTypes.func.isRequired
+  onCellSelect: PropTypes.func.isRequired,
 };
