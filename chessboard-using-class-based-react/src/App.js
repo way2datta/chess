@@ -19,7 +19,8 @@ export default class App extends Component {
 
   onCellSelect = (fileIndex, rankIndex) => {
     const selectedPosition = { fileIndex, rankIndex };
-    const possibleMoves = Chessboard.getPossibleMoves(this.state.selectedPiece,
+    const { selectedPiece } = this.state;
+    const possibleMoves = Chessboard.getPossibleMoves(selectedPiece,
       fileIndex, rankIndex);
     this.setState({ selectedPosition, possibleMoves });
   }
@@ -33,20 +34,23 @@ export default class App extends Component {
   }
 
   render() {
+    const {
+      selectedPosition, rankIndex, fileIndex, possibleMoves, selectedPiece,
+    } = this.state;
     return (
       <div className="App">
         <PiecesList
-          selectedPiece={this.state.selectedPiece}
+          selectedPiece={selectedPiece}
           onPieceSelect={this.onPieceSelect}
         />
         <ChessboardView
           onCellMouseEnter={this.onCellMouseEnter}
           onCellMouseLeave={this.onCellMouseLeave}
           onCellSelect={this.onCellSelect}
-          selectedPosition={this.state.selectedPosition}
-          rankIndex={this.state.rankIndex}
-          fileIndex={this.state.fileIndex}
-          possibleMoves={this.state.possibleMoves}
+          selectedPosition={selectedPosition}
+          rankIndex={rankIndex}
+          fileIndex={fileIndex}
+          possibleMoves={possibleMoves}
         />
       </div>
     );

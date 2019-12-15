@@ -24,7 +24,8 @@ export default class Cell extends Component {
   getCellAdditionalCssClasses = () => {
     const initialCellClass = this.getInitialCellCssClasses();
     const selectedCellClass = this.getSelectedCellCssClasses();
-    const highlightCellClass = this.props.highlight ? '-highlight' : '';
+    const { highlight } = this.props;
+    const highlightCellClass = highlight ? '-highlight' : '';
     return `${selectedCellClass} ${initialCellClass} ${highlightCellClass}`;
   }
 
@@ -36,10 +37,12 @@ export default class Cell extends Component {
     } = this.props;
     return (
       <div
+        role="link"
         className={`cell ${this.getCellAdditionalCssClasses()}`}
         onMouseEnter={() => onCellMouseEnter(fileIndex, rankIndex)}
         onMouseLeave={() => onCellMouseLeave(fileIndex, rankIndex)}
         onClick={() => onCellSelect(fileIndex, rankIndex)}
+        tabIndex={0}
       >
         {`${`${rankTitle}${fileTitle}`}`}
       </div>
@@ -55,4 +58,6 @@ Cell.propTypes = {
   onCellMouseEnter: PropTypes.func.isRequired,
   onCellMouseLeave: PropTypes.func.isRequired,
   onCellSelect: PropTypes.func.isRequired,
+  selectedPosition: PropTypes.object.isRequired,
+  highlight: PropTypes.bool.isRequired,
 };
