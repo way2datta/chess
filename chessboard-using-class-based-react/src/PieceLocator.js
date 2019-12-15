@@ -1,5 +1,6 @@
 import Rook from './Rook';
 import Bishop from './Bishop';
+import Queen from './Queen';
 
 export class PieceLocator {
   static getPiece(selectedPiece) {
@@ -8,6 +9,8 @@ export class PieceLocator {
         return new Rook();
       case 'bishop':
         return new Bishop();
+      case 'queen':
+        return new Queen();
       default:
         throw Error('Invalid piece.');
     }

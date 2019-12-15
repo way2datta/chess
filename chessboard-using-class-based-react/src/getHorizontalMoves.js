@@ -1,4 +1,4 @@
-export function getHorizontalMoves(rankIndex, fileIndex) {
+export function getHorizontalMoves(fileIndex, rankIndex) {
   const horizontalPositions = [];
   let currentRankIndex = rankIndex;
   while (currentRankIndex < 7) {
