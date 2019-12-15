@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { getPieces } from './PieceProvider';
 
 export default class PiecesList extends PureComponent {
@@ -23,3 +24,8 @@ export default class PiecesList extends PureComponent {
     );
   }
 }
+
+PiecesList.propTypes = {
+  selectedPiece: PropTypes.string.isRequired,
+  onPieceSelect: PropTypes.func.isRequired,
+};

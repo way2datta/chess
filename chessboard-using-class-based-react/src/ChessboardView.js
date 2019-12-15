@@ -1,28 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Chessboard from './Chessboard';
 import Cell from './Cell';
 
 export default class ChessboardView extends Component {
-  state = {
-    fileIndex: -1,
-    rankIndex: -1,
-    selectedPosition: {}
-  }
-
-  onCellMouseEnter = (fileIndex, rankIndex) => {
-    this.setState({ fileIndex, rankIndex });
-  }
-
-  onCellSelect = (fileIndex, rankIndex) => {
-    const selectedPosition = { fileIndex, rankIndex }
-    this.setState({ selectedPosition });
-  }
-
-  onCellMouseLeave = () => {
-    this.setState({ fileIndex: -1, rankIndex: -1 });
-  }
-
   renderEmptyBoard() {
+    const {
+      onCellMouseEnter, onCellMouseLeave, onCellSelect, selectedPosition,
+    } = this.props;
+
     return Chessboard.fileTitles.map((fileTitle, fileIndex) => (
       <div key={fileTitle} className="row">
         {
@@ -33,10 +19,10 @@ export default class ChessboardView extends Component {
               rankTitle={rankTitle}
               fileIndex={fileIndex}
               fileTitle={fileTitle}
-              onCellMouseEnter={this.onCellMouseEnter}
-              onCellMouseLeave={this.onCellMouseLeave}
-              onCellSelect={this.onCellSelect}
-              selectedPosition={this.state.selectedPosition}
+              onCellMouseEnter={onCellMouseEnter}
+              onCellMouseLeave={onCellMouseLeave}
+              onCellSelect={onCellSelect}
+              selectedPosition={selectedPosition}
             />
           ))
         }
@@ -45,7 +31,7 @@ export default class ChessboardView extends Component {
   }
 
   render() {
-    const { fileIndex, rankIndex } = this.state;
+    const { fileIndex, rankIndex } = this.props;
     const positionText = `File index: ${fileIndex}, Rank index: ${rankIndex}`;
     return (
       <div className="chessboard">
@@ -55,3 +41,12 @@ export default class ChessboardView extends Component {
     );
   }
 }
+
+ChessboardView.propTypes = {
+  selectedPosition: PropTypes.object.isRequired,
+  onCellMouseEnter: PropTypes.func.isRequired,
+  onCellMouseLeave: PropTypes.func.isRequired,
+  onCellSelect: PropTypes.func.isRequired,
+  fileIndex: PropTypes.number.isRequired,
+  rankIndex: PropTypes.number.isRequired,
+};
