@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PiecesList from './../components/PiecesList';
-import ChessboardView from './../components/ChessboardView';
-import Chessboard from './../lib/Chessboard';
+import PiecesList from './PiecesList';
+import ChessboardView from './ChessboardView';
+import Chessboard from '../lib/Chessboard';
 import './App.css';
 
 export default class App extends Component {

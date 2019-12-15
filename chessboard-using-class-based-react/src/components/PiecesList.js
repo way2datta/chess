@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { getPieces } from './../lib/PieceProvider';
+import { getPieces } from '../lib/PieceProvider';
 
 export default class PiecesList extends PureComponent {
   render() {

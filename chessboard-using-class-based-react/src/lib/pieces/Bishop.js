@@ -1,5 +1,5 @@
-import { getLeftDiagonalMoves } from './../movements/getLeftDiagonalMoves';
-import { getRightDiagonalMoves } from './../movements/getRightDiagonalMoves';
+import { getLeftDiagonalMoves } from '../movements/getLeftDiagonalMoves';
+import { getRightDiagonalMoves } from '../movements/getRightDiagonalMoves';
 
 export default class Bishop {
   getPossibleMoves = (fileIndex, rankIndex) => {
