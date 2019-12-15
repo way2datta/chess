@@ -1,6 +1,6 @@
-import Rook from './Rook';
-import Bishop from './Bishop';
-import Queen from './Queen';
+import Rook from './pieces/Rook';
+import Bishop from './pieces/Bishop';
+import Queen from './pieces/Queen';
 
 export class PieceLocator {
   static getPiece(selectedPiece) {

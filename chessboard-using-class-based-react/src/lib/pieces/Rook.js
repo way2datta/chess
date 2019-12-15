@@ -1,5 +1,5 @@
-import { getHorizontalMoves } from './getHorizontalMoves';
-import { getVerticalMoves } from './getVerticalMoves';
+import { getHorizontalMoves } from '../movements/getHorizontalMoves';
+import { getVerticalMoves } from '../movements/getVerticalMoves';
 
 export default class Rook {
   getPossibleMoves = (fileIndex, rankIndex) => {

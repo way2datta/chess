@@ -1,7 +1,7 @@
-import { getLeftDiagonalMoves } from './getLeftDiagonalMoves';
-import { getRightDiagonalMoves } from './getRightDiagonalMoves';
-import { getHorizontalMoves } from './getHorizontalMoves';
-import { getVerticalMoves } from './getVerticalMoves';
+import { getLeftDiagonalMoves } from '../movements/getLeftDiagonalMoves';
+import { getRightDiagonalMoves } from '../movements/getRightDiagonalMoves';
+import { getHorizontalMoves } from '../movements/getHorizontalMoves';
+import { getVerticalMoves } from '../movements/getVerticalMoves';
 
 export default class Queen {
   getPossibleMoves = (fileIndex, rankIndex) => {
