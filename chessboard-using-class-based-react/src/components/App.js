@@ -21,7 +21,7 @@ export default class App extends Component {
   onCellSelect = (selectedPosition) => {
     const { selectedPiece } = this.state;
     const predictedMoves = Chessboard.getPossibleMoves(selectedPiece, selectedPosition);
-    this.setState({ selectedPosition, predictedMoves }); 
+    this.setState({ selectedPosition, predictedMoves });
   }
 
   onCellMouseLeave = () => {

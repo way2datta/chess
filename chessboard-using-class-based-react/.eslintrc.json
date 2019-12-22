@@ -19,7 +19,7 @@
     "plugins": ["react"],
     "rules": {
         "complexity": ["error", 10],
-        "max-len": ["error", 80],
+        "max-len": ["error", 120],
         "react/jsx-filename-extension": "off",
         "import/no-named-as-default-member": "off",
         "import/no-named-as-default": "off",

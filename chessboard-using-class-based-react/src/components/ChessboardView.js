@@ -14,7 +14,7 @@ export default class ChessboardView extends Component {
       const { fileIndex, rankIndex } = currentPosition;
       return predictedMoves.some((x) => x.fileIndex === fileIndex
         && x.rankIndex === rankIndex);
-    }
+    };
 
     return Chessboard.fileTitles.map((fileTitle, fileIndex) => (
       <div key={fileTitle} className="row">
@@ -30,7 +30,7 @@ export default class ChessboardView extends Component {
               onCellMouseLeave={onCellMouseLeave}
               onCellSelect={onCellSelect}
               selectedPosition={selectedPosition}
-              highlight={shouldHighlightCell({fileIndex, rankIndex})}
+              highlight={shouldHighlightCell({ fileIndex, rankIndex })}
             />
           ))
         }

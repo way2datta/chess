@@ -39,9 +39,9 @@ export default class Cell extends Component {
       <div
         role="link"
         className={`cell ${this.getCellAdditionalCssClasses()}`}
-        onMouseEnter={() => onCellMouseEnter({fileIndex, rankIndex})}
+        onMouseEnter={() => onCellMouseEnter({ fileIndex, rankIndex })}
         onMouseLeave={() => onCellMouseLeave(fileIndex, rankIndex)}
-        onClick={() => onCellSelect({fileIndex, rankIndex})}
+        onClick={() => onCellSelect({ fileIndex, rankIndex })}
         tabIndex={0}
       >
         {`${`${rankTitle}${fileTitle}`}`}
