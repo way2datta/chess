@@ -15,22 +15,22 @@ export default class Queen {
 }
 
 function getHorizontalMoves(fileIndex, rankIndex) {
-  const horizontalPositions = [];
+  const horizontalMoves = [];
   let currentRankIndex = rankIndex;
   if (currentRankIndex < 7) {
     currentRankIndex++;
-    horizontalPositions.push({ fileIndex, rankIndex: currentRankIndex });
+    horizontalMoves.push({ fileIndex, rankIndex: currentRankIndex });
   }
   currentRankIndex = rankIndex;
   if (currentRankIndex > 0) {
     currentRankIndex--;
-    horizontalPositions.push({ fileIndex, rankIndex: currentRankIndex });
+    horizontalMoves.push({ fileIndex, rankIndex: currentRankIndex });
   }
-  return horizontalPositions;
+  return horizontalMoves;
 }
 
 function getLeftDiagonalMoves(fileIndex, rankIndex) {
-  const leftDiagonalPositions = [];
+  const leftDiagonalMoves = [];
 
   let currentRankIndex = rankIndex;
   let currentFileIndex = fileIndex;
@@ -39,7 +39,7 @@ function getLeftDiagonalMoves(fileIndex, rankIndex) {
     currentRankIndex++;
     currentFileIndex++;
 
-    leftDiagonalPositions.push({
+    leftDiagonalMoves.push({
       rankIndex: currentRankIndex,
       fileIndex: currentFileIndex,
     });
@@ -52,17 +52,17 @@ function getLeftDiagonalMoves(fileIndex, rankIndex) {
     currentRankIndex--;
     currentFileIndex--;
 
-    leftDiagonalPositions.push({
+    leftDiagonalMoves.push({
       rankIndex: currentRankIndex,
       fileIndex: currentFileIndex,
     });
   }
 
-  return leftDiagonalPositions;
+  return leftDiagonalMoves;
 }
 
 function getRightDiagonalMoves(fileIndex, rankIndex) {
-  const rightDiagonalPositions = [];
+  const rightDiagonalMoves = [];
 
   let currentRankIndex = rankIndex;
   let currentFileIndex = fileIndex;
@@ -71,7 +71,7 @@ function getRightDiagonalMoves(fileIndex, rankIndex) {
     currentRankIndex--;
     currentFileIndex++;
 
-    rightDiagonalPositions.push({
+    rightDiagonalMoves.push({
       rankIndex: currentRankIndex,
       fileIndex: currentFileIndex,
     });
@@ -84,26 +84,26 @@ function getRightDiagonalMoves(fileIndex, rankIndex) {
     currentRankIndex++;
     currentFileIndex--;
 
-    rightDiagonalPositions.push({
+    rightDiagonalMoves.push({
       rankIndex: currentRankIndex,
       fileIndex: currentFileIndex,
     });
   }
 
-  return rightDiagonalPositions;
+  return rightDiagonalMoves;
 }
 
 function getVerticalMoves(fileIndex, rankIndex) {
-  const verticalPositions = [];
+  const verticalMoves = [];
   let currentFileIndex = fileIndex;
   if (currentFileIndex < 7) {
     currentFileIndex++;
-    verticalPositions.push({ fileIndex: currentFileIndex, rankIndex });
+    verticalMoves.push({ fileIndex: currentFileIndex, rankIndex });
   }
   currentFileIndex = fileIndex;
   if (currentFileIndex > 0) {
     currentFileIndex--;
-    verticalPositions.push({ fileIndex: currentFileIndex, rankIndex });
+    verticalMoves.push({ fileIndex: currentFileIndex, rankIndex });
   }
-  return verticalPositions;
+  return verticalMoves;
 }

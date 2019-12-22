@@ -6,8 +6,8 @@ import Pawn from './pieces/Pawn';
 import Horse from './pieces/Horse';
 
 export class PieceLocator {
-  static getPiece(selectedPiece) {
-    switch (selectedPiece.toLowerCase()) {
+  static getPiece(pieceName) {
+    switch (pieceName.toLowerCase()) {
       case 'rook':
         return new Rook();
       case 'bishop':

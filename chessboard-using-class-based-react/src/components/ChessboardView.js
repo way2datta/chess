@@ -4,11 +4,17 @@ import Chessboard from '../lib/Chessboard';
 import Cell from './Cell';
 
 export default class ChessboardView extends Component {
-  renderEmptyBoard() {
+  renderBoard() {
     const {
       onCellMouseEnter, onCellMouseLeave, onCellSelect,
-      selectedPosition, possibleMoves,
+      selectedPosition, predictedMoves,
     } = this.props;
+
+    const shouldHighlightCell = (currentPosition) => {
+      const { fileIndex, rankIndex } = currentPosition;
+      return predictedMoves.some((x) => x.fileIndex === fileIndex
+        && x.rankIndex === rankIndex);
+    }
 
     return Chessboard.fileTitles.map((fileTitle, fileIndex) => (
       <div key={fileTitle} className="row">
@@ -24,8 +30,7 @@ export default class ChessboardView extends Component {
               onCellMouseLeave={onCellMouseLeave}
               onCellSelect={onCellSelect}
               selectedPosition={selectedPosition}
-              highlight={possibleMoves.some((x) => x.fileIndex === fileIndex
-                && x.rankIndex === rankIndex)}
+              highlight={shouldHighlightCell({fileIndex, rankIndex})}
             />
           ))
         }
@@ -38,7 +43,7 @@ export default class ChessboardView extends Component {
     const positionText = `File index: ${fileIndex}, Rank index: ${rankIndex}`;
     return (
       <div className="chessboard">
-        {this.renderEmptyBoard()}
+        {this.renderBoard()}
         {fileIndex !== -1 && <span className="selected-position-text">{positionText}</span>}
       </div>
     );
@@ -52,5 +57,5 @@ ChessboardView.propTypes = {
   onCellSelect: PropTypes.func.isRequired,
   fileIndex: PropTypes.number.isRequired,
   rankIndex: PropTypes.number.isRequired,
-  possibleMoves: PropTypes.array.isRequired,
+  predictedMoves: PropTypes.array.isRequired,
 };

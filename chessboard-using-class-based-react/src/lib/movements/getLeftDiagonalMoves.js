@@ -1,5 +1,5 @@
 export function getLeftDiagonalMoves(fileIndex, rankIndex) {
-  const leftDiagonalPositions = [];
+  const leftDiagonalMooves = [];
 
   let currentRankIndex = rankIndex;
   let currentFileIndex = fileIndex;
@@ -8,7 +8,7 @@ export function getLeftDiagonalMoves(fileIndex, rankIndex) {
     currentRankIndex++;
     currentFileIndex++;
 
-    leftDiagonalPositions.push({
+    leftDiagonalMooves.push({
       rankIndex: currentRankIndex,
       fileIndex: currentFileIndex,
     });
@@ -21,11 +21,11 @@ export function getLeftDiagonalMoves(fileIndex, rankIndex) {
     currentRankIndex--;
     currentFileIndex--;
 
-    leftDiagonalPositions.push({
+    leftDiagonalMooves.push({
       rankIndex: currentRankIndex,
       fileIndex: currentFileIndex,
     });
   }
 
-  return leftDiagonalPositions;
+  return leftDiagonalMooves;
 }

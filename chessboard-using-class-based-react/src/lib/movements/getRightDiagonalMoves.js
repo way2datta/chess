@@ -1,5 +1,5 @@
 export function getRightDiagonalMoves(fileIndex, rankIndex) {
-  const rightDiagonalPositions = [];
+  const rightDiagonalMoves = [];
 
   let currentRankIndex = rankIndex;
   let currentFileIndex = fileIndex;
@@ -8,7 +8,7 @@ export function getRightDiagonalMoves(fileIndex, rankIndex) {
     currentRankIndex--;
     currentFileIndex++;
 
-    rightDiagonalPositions.push({
+    rightDiagonalMoves.push({
       rankIndex: currentRankIndex,
       fileIndex: currentFileIndex,
     });
@@ -21,11 +21,11 @@ export function getRightDiagonalMoves(fileIndex, rankIndex) {
     currentRankIndex++;
     currentFileIndex--;
 
-    rightDiagonalPositions.push({
+    rightDiagonalMoves.push({
       rankIndex: currentRankIndex,
       fileIndex: currentFileIndex,
     });
   }
 
-  return rightDiagonalPositions;
+  return rightDiagonalMoves;
 }

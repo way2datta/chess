@@ -10,19 +10,18 @@ export default class App extends Component {
     fileIndex: -1,
     rankIndex: -1,
     selectedPosition: {},
-    possibleMoves: [],
+    predictedMoves: [],
   }
 
-  onCellMouseEnter = (fileIndex, rankIndex) => {
+  onCellMouseEnter = (currentMousePosition) => {
+    const { fileIndex, rankIndex } = currentMousePosition;
     this.setState({ fileIndex, rankIndex });
   }
 
-  onCellSelect = (fileIndex, rankIndex) => {
-    const selectedPosition = { fileIndex, rankIndex };
+  onCellSelect = (selectedPosition) => {
     const { selectedPiece } = this.state;
-    const possibleMoves = Chessboard.getPossibleMoves(selectedPiece,
-      fileIndex, rankIndex);
-    this.setState({ selectedPosition, possibleMoves });
+    const predictedMoves = Chessboard.getPossibleMoves(selectedPiece, selectedPosition);
+    this.setState({ selectedPosition, predictedMoves }); 
   }
 
   onCellMouseLeave = () => {
@@ -35,7 +34,7 @@ export default class App extends Component {
 
   render() {
     const {
-      selectedPosition, rankIndex, fileIndex, possibleMoves, selectedPiece,
+      selectedPosition, rankIndex, fileIndex, predictedMoves, selectedPiece,
     } = this.state;
     return (
       <div className="App">
@@ -52,7 +51,7 @@ export default class App extends Component {
             selectedPosition={selectedPosition}
             rankIndex={rankIndex}
             fileIndex={fileIndex}
-            possibleMoves={possibleMoves}
+            predictedMoves={predictedMoves}
           />
         )}
       </div>
