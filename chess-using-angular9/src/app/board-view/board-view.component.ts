@@ -9,6 +9,8 @@ export class BoardViewComponent implements OnInit {
   fileTitles: any; // TODO: TS Technical debt 
   rankTitles: any; // TODO: TS Technical debt 
   @Input() selectedPosition: any; // TODO: TS Debt 
+  @Input() predictedMoves: any;
+  
   @Output() messageEvent = new EventEmitter<object>();
 
   constructor() { }
@@ -37,14 +39,21 @@ export class BoardViewComponent implements OnInit {
   getCellClasses(fileIndex, rankIndex) {
     const initialCellClass = this.getInitialCellCssClasses(fileIndex, rankIndex);
     const selectedClass = this.getSelectedCellCssClasses(fileIndex, rankIndex);
-    console.log(selectedClass);
+    const highlight = this.shouldHighlightCell(fileIndex, rankIndex)
+    const highlightCellClass = highlight ? 'highlight' : '';
+    console.log({selectedClass,highlight, highlightCellClass, predictedMoves: this.predictedMoves});
     let classes = {
       cell: true,
       [initialCellClass]: true,
       [selectedClass]: true,
+      [highlightCellClass]: true,
     }
     return classes;
   }
+
+  shouldHighlightCell = (fileIndex, rankIndex) => {
+    return this.predictedMoves.some((x) => x.fileIndex === fileIndex && x.rankIndex === rankIndex);
+  };
 
   onCellSelected(fileIndex, rankIndex) {
     this.messageEvent.emit({fileIndex, rankIndex})

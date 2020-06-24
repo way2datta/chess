@@ -4,5 +4,7 @@
     <div class="separator"></div>
     <app-board-view *ngIf="selectedPiece" 
     (messageEvent)="onCellSelected($event)"
-    [selectedPosition]="selectedPosition"></app-board-view>
+    [selectedPosition]="selectedPosition"
+    [predictedMoves]="predictedMoves"
+    ></app-board-view>
 </div>
