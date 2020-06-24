@@ -1,0 +1,8 @@
+<ul class="pieces-list">
+    <li *ngFor="let piece of pieces"
+    (click)="onSelect(piece)"
+    [class.selected]="piece === selectedPiece"
+    >
+        {{piece.name}}
+    </li>
+</ul>

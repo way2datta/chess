@@ -1,0 +1,21 @@
+
+.pieces-list {
+    list-style: none;
+    padding: 0;
+    display: block;
+    .selected {
+        color: #fff;
+        background-color: #4caf50;
+    }
+    li {
+        display: inline;
+        min-height: 40px;
+        min-width: 20px;
+        margin: 3px;
+        padding: 20px;
+        background-color: gray;
+        color: aliceblue;
+        cursor: pointer;
+    }
+    
+}
