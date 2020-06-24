@@ -2,6 +2,7 @@
     list-style: none;
     padding: 0;
     display: block;
+    text-transform: capitalize;
     .selected {
         color: #fff;
         background-color: #4caf50;
@@ -25,5 +26,8 @@
     justify-content: center;
     .error{
         color: #f00;
+    }
+    span{
+        text-transform: capitalize;
     }
 }

@@ -6,5 +6,5 @@
 
 <div class="message">
     <h3 *ngIf="!selectedPiece" class="error">Please select a piece</h3>
-    <h3 *ngIf="selectedPiece">You have selected: {{selectedPiece.name}}</h3>
+    <h3 *ngIf="selectedPiece">You have selected: <span>{{selectedPiece.name}}</span></h3>
 </div>

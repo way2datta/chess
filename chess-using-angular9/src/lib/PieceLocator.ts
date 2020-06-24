@@ -4,21 +4,22 @@ import Queen from './pieces/Queen';
 import King from './pieces/King';
 import Pawn from './pieces/Pawn';
 import Horse from './pieces/Horse';
+import PieceType from "./PieceType";
 
 export class PieceLocator {
   static getPiece(pieceName) {
     switch (pieceName.toLowerCase()) {
-      case 'rook':
+      case PieceType.Rook:
         return new Rook();
-      case 'bishop':
+      case PieceType.Bishop:
         return new Bishop();
-      case 'queen':
+      case PieceType.Queen:
         return new Queen();
-      case 'king':
+      case PieceType.King:
         return new King();
-      case 'pawn':
+      case PieceType.Pawn:
         return new Pawn();
-      case 'horse':
+      case PieceType.Rook:
         return new Horse();
       default:
         throw Error('Invalid piece.');
