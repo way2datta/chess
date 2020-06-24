@@ -1,8 +1,10 @@
 <ul class="pieces-list">
-    <li *ngFor="let piece of pieces"
-    (click)="onSelect(piece)"
-    [class.selected]="piece === selectedPiece"
-    >
+    <li *ngFor="let piece of pieces" (click)="onSelect(piece)" [class.selected]="piece === selectedPiece">
         {{piece.name}}
     </li>
 </ul>
+
+<div class="message">
+    <h3 *ngIf="!selectedPiece" class="error">Please select a piece</h3>
+    <h3 *ngIf="selectedPiece">You have selected: {{selectedPiece.name}}</h3>
+</div>

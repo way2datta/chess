@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'chess-using-angular9';
+  selectedPiece:any;
+  receiveMessage($event) {
+    this.selectedPiece = $event
+    console.log({"selectedPiece": this.selectedPiece});
+  }
 }

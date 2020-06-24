@@ -29,7 +29,6 @@ export class BoardViewComponent implements OnInit {
       cell: true,
       [initialCellClass]: true
     }
-    console.log({fileIndex, rankIndex,initialCellClass});
     return classes;
   }
 }

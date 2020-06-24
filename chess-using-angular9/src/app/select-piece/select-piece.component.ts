@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-select-piece',
@@ -8,13 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class SelectPieceComponent implements OnInit {
   constructor() { }
   pieces: any; // TODO: TS Debt 
-  selectedPiece: any; // TODO: TS Debt 
+  @Input() selectedPiece: any; // TODO: TS Debt 
+  @Output() messageEvent = new EventEmitter<object>();
+
   ngOnInit(): void {
     this.pieces = getPieces();
   }
   onSelect(piece): void {
-    this.selectedPiece = piece;
-    console.log(piece);
+    this.onPieceSelected(piece);
+  }
+
+  onPieceSelected(selectedPiece) {
+    this.messageEvent.emit(selectedPiece)
   }
 }
 

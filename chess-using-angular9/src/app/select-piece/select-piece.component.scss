@@ -1,4 +1,3 @@
-
 .pieces-list {
     list-style: none;
     padding: 0;
@@ -17,5 +16,14 @@
         color: aliceblue;
         cursor: pointer;
     }
-    
+  
+}
+
+.message {
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    .error{
+        color: #f00;
+    }
 }
