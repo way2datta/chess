@@ -10,6 +10,12 @@
             padding: 20px;
             border: 1px solid #000;
             cursor: pointer;
+            &__selected {
+                font-weight: bolder;
+                color: #fff !important;
+                background-color: rgb(224, 124, 16) !important;
+                border: 1px solid grey;
+            }
         }
         .black {
             background-color: #000;

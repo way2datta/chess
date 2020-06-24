@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-board-view',
@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class BoardViewComponent implements OnInit {
   fileTitles: any; // TODO: TS Technical debt 
   rankTitles: any; // TODO: TS Technical debt 
- 
+  @Input() selectedPosition: any; // TODO: TS Debt 
+  @Output() messageEvent = new EventEmitter<object>();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -23,12 +25,28 @@ export class BoardViewComponent implements OnInit {
     return rankIndex % 2 === 0 ? 'black' : 'white';
   }
 
+  getSelectedCellCssClasses = (selectedFileIndex, selectedRankIndex) => {
+    const {fileIndex, rankIndex} = this.selectedPosition;
+    if (selectedFileIndex === fileIndex
+      && selectedRankIndex === rankIndex) {
+      return 'cell__selected';
+    }
+    return '';
+  }
+
   getCellClasses(fileIndex, rankIndex) {
-    const initialCellClass = this.getInitialCellCssClasses(fileIndex, rankIndex)
+    const initialCellClass = this.getInitialCellCssClasses(fileIndex, rankIndex);
+    const selectedClass = this.getSelectedCellCssClasses(fileIndex, rankIndex);
+    console.log(selectedClass);
     let classes = {
       cell: true,
-      [initialCellClass]: true
+      [initialCellClass]: true,
+      [selectedClass]: true,
     }
     return classes;
+  }
+
+  onCellSelected(fileIndex, rankIndex) {
+    this.messageEvent.emit({fileIndex, rankIndex})
   }
 }

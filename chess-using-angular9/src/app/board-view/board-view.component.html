@@ -2,6 +2,7 @@
   <div class="board-row" *ngFor="let file of fileTitles; index as fileIndex;">
     <div *ngFor="let rank of rankTitles; index as rankIndex"
     [ngClass]="getCellClasses(fileIndex, rankIndex)"
+    (click)="onCellSelected(fileIndex, rankIndex)"
     >
       {{rank}}{{file}}
     </div>

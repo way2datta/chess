@@ -8,8 +8,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'chess-using-angular9';
   selectedPiece:any;
-  receiveMessage($event) {
+  selectedPosition:any = {};
+
+  onPieceSelected($event) {
     this.selectedPiece = $event
     console.log({"selectedPiece": this.selectedPiece});
+  }
+
+  onCellSelected = (selectedPosition) => {
+    this.selectedPosition = selectedPosition;
+    console.log({selectedPosition})
   }
 }

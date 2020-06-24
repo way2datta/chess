@@ -1,6 +1,8 @@
 <div class="app">
-    <app-select-piece (messageEvent)="receiveMessage($event)"
+    <app-select-piece (messageEvent)="onPieceSelected($event)"
     [selectedPiece]="selectedPiece"></app-select-piece>
     <div class="separator"></div>
-    <app-board-view *ngIf="selectedPiece" ></app-board-view>
+    <app-board-view *ngIf="selectedPiece" 
+    (messageEvent)="onCellSelected($event)"
+    [selectedPosition]="selectedPosition"></app-board-view>
 </div>
