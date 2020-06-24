@@ -1,0 +1,16 @@
+
+
+   .chessboard{
+       margin: 30px;
+       .board-row {
+        display: flex;
+        .cell {
+            display: inline;
+            min-height: 25px;
+            min-width: 25px;
+            padding: 20px;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+    }
+   }

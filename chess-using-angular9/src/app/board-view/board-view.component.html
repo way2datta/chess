@@ -1,6 +1,7 @@
-<p>board-view works!</p>
-<div className="row" *ngFor="let file of fileTitles">
-    <div *ngFor="let rank of rankTitles">
-        {{rank}} {{file}}
-      </div>
+<div class="chessboard">
+  <div class="board-row" *ngFor="let file of fileTitles">
+    <div class="cell" *ngFor="let rank of rankTitles">
+      {{rank}}{{file}}
+    </div>
+  </div>
 </div>
