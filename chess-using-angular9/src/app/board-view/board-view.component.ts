@@ -41,7 +41,6 @@ export class BoardViewComponent implements OnInit {
     const selectedClass = this.getSelectedCellCssClasses(fileIndex, rankIndex);
     const highlight = this.shouldHighlightCell(fileIndex, rankIndex)
     const highlightCellClass = highlight ? 'highlight' : '';
-    console.log({selectedClass,highlight, highlightCellClass, predictedMoves: this.predictedMoves});
     let classes = {
       cell: true,
       [initialCellClass]: true,

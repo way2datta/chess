@@ -14,7 +14,6 @@ export class AppComponent {
   
   onPieceSelected($event) {
     this.selectedPiece = $event
-    console.log({"selectedPiece": this.selectedPiece});
   }
 
   onCellSelected = (selectedPosition) => {
@@ -22,6 +21,5 @@ export class AppComponent {
     const {name} = this.selectedPiece;
     const predictedMoves = Chessboard.getPossibleMoves(name, this.selectedPosition);
     this.predictedMoves = predictedMoves;
-    console.log({selectedPosition, predictedMoves, name});
   }
 }
