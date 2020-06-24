@@ -12,5 +12,23 @@
             border: 1px solid #000;
             cursor: pointer;
         }
+        .black {
+            background-color: #000;
+            color: #fff;
+        }
+        .black:hover {
+            color: #fff;
+            background-color: #4caf50;
+            border: 1px solid grey;
+        }
+        .white {
+            color: #000;
+            background-color: #fff;
+        }
+        .white:hover {
+            color: #fff;
+            background-color: #4caf50;
+            border: 1px solid grey;
+        }
     }
    }

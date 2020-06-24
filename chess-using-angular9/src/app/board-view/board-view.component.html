@@ -1,6 +1,8 @@
 <div class="chessboard">
-  <div class="board-row" *ngFor="let file of fileTitles">
-    <div class="cell" *ngFor="let rank of rankTitles">
+  <div class="board-row" *ngFor="let file of fileTitles; index as fileIndex;">
+    <div *ngFor="let rank of rankTitles; index as rankIndex"
+    [ngClass]="getCellClasses(fileIndex, rankIndex)"
+    >
       {{rank}}{{file}}
     </div>
   </div>
