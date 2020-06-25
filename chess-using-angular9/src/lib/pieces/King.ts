@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-export default class Queen {
+export default class King {
   getPossibleMoves = (fileIndex, rankIndex) => {
     const moves = [];
     const leftDiagonalMoves = getLeftDiagonalMoves(fileIndex, rankIndex);

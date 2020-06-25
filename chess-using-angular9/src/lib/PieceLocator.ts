@@ -9,7 +9,7 @@ import PieceType from "./PieceType";
 export class PieceLocator {
   static getPiece(pieceName) {
     switch (pieceName.toLowerCase()) {
-      case PieceType.Rook:
+      case PieceType.Rook:  
         return new Rook();
       case PieceType.Bishop:
         return new Bishop();

@@ -1,5 +1,5 @@
 
-export default class Rook {
+export default class Horse {
   getPossibleMoves = (fileIndex, rankIndex) => {
     const movesByRank = this.getMoveByRank(fileIndex, rankIndex);
     const movesByFile = this.getMovesByFile(fileIndex, rankIndex);
