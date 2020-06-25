@@ -6,7 +6,7 @@ export default class Pawn {
       if (rankIndex > 0) {
         moves.push({ rankIndex: rankIndex - 1, fileIndex: fileIndex + 1 });
       }
-      if (rankIndex < 7) { 
+      if (rankIndex < 7) {
         moves.push({ rankIndex: rankIndex + 1, fileIndex: fileIndex + 1 });
       }
     }

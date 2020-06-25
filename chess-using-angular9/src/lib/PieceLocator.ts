@@ -4,12 +4,12 @@ import Queen from './pieces/Queen';
 import King from './pieces/King';
 import Pawn from './pieces/Pawn';
 import Horse from './pieces/Horse';
-import PieceType from "./PieceType";
+import PieceType from './PieceType';
 
 export class PieceLocator {
   static getPiece(pieceName) {
     switch (pieceName.toLowerCase()) {
-      case PieceType.Rook:  
+      case PieceType.Rook:
         return new Rook();
       case PieceType.Bishop:
         return new Bishop();

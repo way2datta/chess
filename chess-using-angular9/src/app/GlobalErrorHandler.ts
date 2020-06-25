@@ -14,14 +14,13 @@ export class GlobalErrorHandler extends ErrorHandler {
     }
 
     handleError(error) {
-        console.log("Handling error: " + error);
-        this.toastrService.error(error.message, null, { onActivateTick: true })
+        this.toastrService.error(error.message, null, { onActivateTick: true });
         super.handleError(error);
     }
 
     /**
      * Need to get ToastrService from injector rather than constructor injection to avoid cyclic dependency error
-     * @returns {} 
+     * @returns {}
      */
     private get toastrService(): ToastrService {
         return this.injector.get(ToastrService);

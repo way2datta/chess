@@ -1,13 +1,13 @@
 
-import PieceType from "./PieceType";
-import Chessboard from "./Chessboard";
+import PieceType from './PieceType';
+import Chessboard from './Chessboard';
 
 const movesComparer = (current, next) => {
   return current.rankIndex - next.rankIndex;
-}
+};
 
 describe('Chessboard', () => {
-  describe('When pawn is selected', ()=>{
+  describe('When pawn is selected', () => {
     [{
       currentPosition: { fileIndex: 0, rankIndex: 0 },
       expectedMoves: [{ rankIndex: 1, fileIndex: 1 }, { rankIndex: 0, fileIndex: 1 }]
@@ -25,7 +25,7 @@ describe('Chessboard', () => {
         expect(possibleMoves.sort(movesComparer)).toEqual(expectedMoves.sort(movesComparer));
       });
     });
-  
+
     [{
       currentPosition: { fileIndex: 7, rankIndex: 7 },
     },
@@ -37,10 +37,10 @@ describe('Chessboard', () => {
         const expectedMoves = [];
         expect(possibleMoves).toEqual(expectedMoves);
       });
-    })
+    });
   });
 
-  describe('When pawn is selected', ()=>{
+  describe('When pawn is selected', () => {
     [{
       currentPosition: { fileIndex: 0, rankIndex: 0 },
       expectedMoves: [{ rankIndex: 1, fileIndex: 1 }, { rankIndex: 0, fileIndex: 1 }]
@@ -58,7 +58,7 @@ describe('Chessboard', () => {
         expect(possibleMoves.sort(movesComparer)).toEqual(expectedMoves.sort(movesComparer));
       });
     });
-  
+
     [{
       currentPosition: { fileIndex: 7, rankIndex: 7 },
     },
@@ -70,6 +70,6 @@ describe('Chessboard', () => {
         const expectedMoves = [];
         expect(possibleMoves).toEqual(expectedMoves);
       });
-    })
+    });
   });
 });

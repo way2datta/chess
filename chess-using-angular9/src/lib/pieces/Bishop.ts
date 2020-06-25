@@ -6,5 +6,5 @@ export default class Bishop {
     const rightDiagonalMoves = getRightDiagonalMoves(fileIndex, rankIndex);
     const leftDiagonalMoves = getLeftDiagonalMoves(fileIndex, rankIndex);
     return rightDiagonalMoves.concat(leftDiagonalMoves);
-  };
+  }
 }

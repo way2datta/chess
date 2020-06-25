@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SelectPieceComponent } from './select-piece/select-piece.component';
 import { BoardViewComponent } from './board-view/board-view.component';
-import { GlobalErrorHandler } from "./GlobalErrorHandler"; 
+import { GlobalErrorHandler } from './GlobalErrorHandler';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({

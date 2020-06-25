@@ -6,5 +6,5 @@ export default class Rook {
     const horizontalMoves = getHorizontalMoves(fileIndex, rankIndex);
     const verticalMoves = getVerticalMoves(fileIndex, rankIndex);
     return horizontalMoves.concat(verticalMoves);
-  };
+  }
 }

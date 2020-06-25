@@ -1,4 +1,4 @@
-import PieceType from "./PieceType";
+import PieceType from './PieceType';
 
 export function getPieces() {
   return [

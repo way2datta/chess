@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import Chessboard from "./../../lib/Chessboard";
+import Chessboard from './../../lib/Chessboard';
 
 @Component({
   selector: 'app-board-view',
@@ -7,10 +7,10 @@ import Chessboard from "./../../lib/Chessboard";
   styleUrls: ['./board-view.component.scss']
 })
 export class BoardViewComponent implements OnInit {
-  fileTitles: string[]; 
-  rankTitles: string[];  
-  
-  @Input() selectedPosition: any; // TODO: TS Debt 
+  fileTitles: string[];
+  rankTitles: string[];
+
+  @Input() selectedPosition: any; // TODO: TS Debt
   @Input() predictedMoves: any;
   @Output() messageEvent = new EventEmitter<object>();
 
@@ -41,22 +41,22 @@ export class BoardViewComponent implements OnInit {
   getCellClasses(fileIndex, rankIndex) {
     const initialCellClass = this.getInitialCellCssClasses(fileIndex, rankIndex);
     const selectedClass = this.getSelectedCellCssClasses(fileIndex, rankIndex);
-    const highlight = this.shouldHighlightCell(fileIndex, rankIndex)
+    const highlight = this.shouldHighlightCell(fileIndex, rankIndex);
     const highlightCellClass = highlight ? 'highlight' : '';
-    let classes = {
+    const classes = {
       cell: true,
       [initialCellClass]: true,
       [selectedClass]: true,
       [highlightCellClass]: true,
-    }
+    };
     return classes;
   }
 
   shouldHighlightCell = (fileIndex, rankIndex) => {
     return this.predictedMoves.some((x) => x.fileIndex === fileIndex && x.rankIndex === rankIndex);
-  };
+  }
 
   onCellSelected(fileIndex, rankIndex) {
-    this.messageEvent.emit({fileIndex, rankIndex})
+    this.messageEvent.emit({fileIndex, rankIndex});
   }
 }

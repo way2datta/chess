@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import Chessboard from "./../lib/Chessboard";
+import Chessboard from './../lib/Chessboard';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +8,12 @@ import Chessboard from "./../lib/Chessboard";
 })
 export class AppComponent {
   title = 'chess-using-angular9';
-  selectedPiece:any;
-  selectedPosition:any = {};
-  predictedMoves: any= [];
-  
+  selectedPiece: any;
+  selectedPosition: any = {};
+  predictedMoves: any = [];
+
   onPieceSelected($event) {
-    this.selectedPiece = $event
+    this.selectedPiece = $event;
   }
 
   onCellSelected = (selectedPosition) => {

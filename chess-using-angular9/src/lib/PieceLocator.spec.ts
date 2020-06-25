@@ -1,6 +1,6 @@
 
-import PieceType from "./PieceType";
-import { PieceLocator } from "./PieceLocator";
+import PieceType from './PieceType';
+import { PieceLocator } from './PieceLocator';
 
 describe('PieceLocator', () => {
   [PieceType.Bishop, PieceType.Horse, PieceType.King, PieceType.Pawn,
@@ -8,7 +8,7 @@ describe('PieceLocator', () => {
     it(`should create a ${pieceType} piece`, () => {
       const piece = PieceLocator.getPiece(pieceType);
       const actualPiece = piece.constructor.name.toLowerCase();
-      expect(actualPiece).toBe(pieceType)
+      expect(actualPiece).toBe(pieceType);
     });
-  })
+  });
 });
