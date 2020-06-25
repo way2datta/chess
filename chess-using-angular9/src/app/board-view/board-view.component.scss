@@ -1,56 +1,55 @@
+@import "./../../assets/variable";
 
-
-   .chessboard{
-       .board-row {
+.chessboard {
+    .board-row {
         display: flex;
         .cell {
             display: inline;
             min-height: 25px;
             min-width: 25px;
             padding: 20px;
-            border: 1px solid #000;
+            border: 1px solid $black;
             cursor: pointer;
             &__selected {
                 font-weight: bolder;
-                color: #fff !important;
-                background-color: rgb(224, 124, 16) !important;
+                color: $white !important;
+                background-color: $cell-highlight-background-color !important;
                 border: 1px solid grey;
             }
- 
         }
         .highlight {
             font-weight: bolder;
         }
-       .black {
-            background-color: #000;
+        .black {
+            background-color: $black;
             color: #fff;
             &.highlight {
-                background-color: rgba(224, 123, 16, 0.666) !important;
+                background-color: rgba($cell-highlight-background-color, 0.666) !important;
             }
             &.highlight:hover {
-                background-color: #000;
+                background-color: $black;
             }
         }
         .black:hover {
             color: #fff;
-            background-color: #4caf50;
+            background-color: $primary-color !important;
             border: 1px solid grey;
         }
         .white {
-            color: #000;
+            color: $black;
             background-color: #fff;
             &.highlight {
-                background-color: rgba(224, 123, 16, 0.344);
+                background-color: rgba($cell-highlight-background-color, 0.344);
             }
             &.highlight:hover {
-                background-color: #fff;
-                color: #000;
+                background-color: $white;
+                color: $black;
             }
         }
         .white:hover {
             color: #fff;
-            background-color: #4caf50;
+            background-color: $primary-color !important;
             border: 1px solid grey;
         }
     }
-   }
+}
