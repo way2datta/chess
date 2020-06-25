@@ -1,12 +1,15 @@
+import Point from './../Point';
+import IPiece from './IPiece';
 
-export default class Horse {
-  getPossibleMoves = (fileIndex, rankIndex) => {
-    const movesByRank = this.getMoveByRank(fileIndex, rankIndex);
-    const movesByFile = this.getMovesByFile(fileIndex, rankIndex);
+export default class Horse implements IPiece {
+  getPossibleMoves = (position: Point): Point[] => {
+    const movesByRank = this.getMoveByRank(position);
+    const movesByFile = this.getMovesByFile(position);
     return movesByRank.concat(movesByFile);
   }
 
-  getMovesByFile(fileIndex, rankIndex) {
+  getMovesByFile(position: Point) {
+    const { fileIndex, rankIndex } = position;
     const currentRankIndex = rankIndex;
     const currentFileIndex = fileIndex;
 
@@ -48,7 +51,8 @@ export default class Horse {
     return possibleMoves;
   }
 
-  getMoveByRank(fileIndex, rankIndex) {
+  getMoveByRank(position: Point) {
+    const { fileIndex, rankIndex } = position;
     const currentRankIndex = rankIndex;
     const currentFileIndex = fileIndex;
 

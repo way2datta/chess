@@ -1,4 +1,6 @@
-export function getRightDiagonalMoves(fileIndex, rankIndex) {
+import Point from './../Point';
+export function getRightDiagonalMoves(position: Point) {
+  const { fileIndex, rankIndex } = position;
   const rightDiagonalMoves = [];
 
   let currentRankIndex = rankIndex;

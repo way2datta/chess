@@ -1,6 +1,10 @@
+import IPiece from './IPiece';
+import Point from '../Point';
+
 /* eslint-disable no-use-before-define */
-export default class King {
-  getPossibleMoves = (fileIndex, rankIndex) => {
+export default class King implements IPiece {
+  getPossibleMoves = (position: Point): Point[] => {
+    const { fileIndex, rankIndex} = position;
     const moves = [];
     const leftDiagonalMoves = getLeftDiagonalMoves(fileIndex, rankIndex);
     const rightDiagonalMoves = getRightDiagonalMoves(fileIndex, rankIndex);
