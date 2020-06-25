@@ -11,8 +11,8 @@ export default class Queen implements IPiece{
     const moves = [];
     const leftDiagonalMoves = getLeftDiagonalMoves(position);
     const rightDiagonalMoves = getRightDiagonalMoves(position);
-    const horizontalMoves = getHorizontalMoves(fileIndex, rankIndex);
-    const verticalMoves = getVerticalMoves(fileIndex, rankIndex);
+    const horizontalMoves = getHorizontalMoves(position);
+    const verticalMoves = getVerticalMoves(position);
 
     return moves.concat(leftDiagonalMoves)
       .concat(rightDiagonalMoves)

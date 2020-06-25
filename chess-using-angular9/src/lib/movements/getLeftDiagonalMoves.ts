@@ -1,5 +1,6 @@
 import Point from './../Point';
-export function getLeftDiagonalMoves(position: Point) {
+
+export function getLeftDiagonalMoves(position: Point) : Point[] {
   const { fileIndex, rankIndex } = position;
   const leftDiagonalMooves = [];
 

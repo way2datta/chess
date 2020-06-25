@@ -5,9 +5,9 @@ import Point from '../Point';
 
 export default class Rook implements IPiece {
   getPossibleMoves = (position: Point): Point[] => {
-const {fileIndex, rankIndex} = position;
-const horizontalMoves = getHorizontalMoves(fileIndex, rankIndex);
-const verticalMoves = getVerticalMoves(fileIndex, rankIndex);
-return horizontalMoves.concat(verticalMoves);
+    const {fileIndex, rankIndex} = position;
+    const horizontalMoves = getHorizontalMoves(position);
+    const verticalMoves = getVerticalMoves(position);
+    return horizontalMoves.concat(verticalMoves);
   }
 }
