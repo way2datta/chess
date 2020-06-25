@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import Chessboard from './../../lib/Chessboard';
+import CellDisplayTextProvider from './../../lib/CellDisplayTextProvider';
 
 @Component({
   selector: 'app-board-view',
@@ -17,7 +18,7 @@ export class BoardViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const { fileTitles, rankTitles } = Chessboard;
+    const { fileTitles, rankTitles } = CellDisplayTextProvider;
     this.rankTitles = rankTitles;
     this.fileTitles = fileTitles;
   }

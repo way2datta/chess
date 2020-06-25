@@ -1,16 +1,17 @@
-import Point from './../Point';
-export function getRightDiagonalMoves(position: Point) {
+import Point from '../Point';
+
+export function getLeftDiagonalMoves(position: Point): Point[] {
   const { fileIndex, rankIndex } = position;
-  const rightDiagonalMoves = [];
+  const leftDiagonalMooves = [];
 
   let currentRankIndex = rankIndex;
   let currentFileIndex = fileIndex;
 
-  while (currentRankIndex > 0 && currentFileIndex < 7) {
-    currentRankIndex--;
+  while (currentRankIndex < 7 && currentFileIndex < 7) {
+    currentRankIndex++;
     currentFileIndex++;
 
-    rightDiagonalMoves.push({
+    leftDiagonalMooves.push({
       rankIndex: currentRankIndex,
       fileIndex: currentFileIndex,
     });
@@ -19,15 +20,15 @@ export function getRightDiagonalMoves(position: Point) {
   currentRankIndex = rankIndex;
   currentFileIndex = fileIndex;
 
-  while (currentRankIndex < 7 && currentFileIndex > 0) {
-    currentRankIndex++;
+  while (currentRankIndex > 0 && currentFileIndex > 0) {
+    currentRankIndex--;
     currentFileIndex--;
 
-    rightDiagonalMoves.push({
+    leftDiagonalMooves.push({
       rankIndex: currentRankIndex,
       fileIndex: currentFileIndex,
     });
   }
 
-  return rightDiagonalMoves;
+  return leftDiagonalMooves;
 }

@@ -1,7 +1,7 @@
-import { getLeftDiagonalMoves } from '../movements/getLeftDiagonalMoves';
-import { getRightDiagonalMoves } from '../movements/getRightDiagonalMoves';
-import { getHorizontalMoves } from '../movements/getHorizontalMoves';
-import { getVerticalMoves } from '../movements/getVerticalMoves';
+import { getLeftDiagonalMoves } from '../movements/LeftDiagonalMoveProvider';
+import { getRightDiagonalMoves } from '../movements/RightDiagonalMovesProvider';
+import { getHorizontalMoves } from '../movements/HorizontalMoveProvider';
+import { getVerticalMoves } from '../movements/VerticalMovesProvider';
 import IPiece from './IPiece';
 import Point from '../Point';
 

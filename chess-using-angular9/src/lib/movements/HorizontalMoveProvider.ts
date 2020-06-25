@@ -1,8 +1,8 @@
-import Point from './../Point';
+import Point from '../Point';
 
 export function getHorizontalMoves(position: Point) {
   const { fileIndex, rankIndex } = position;
-  
+
   const horizontalMoves = [];
   let currentRankIndex = rankIndex;
   while (currentRankIndex < 7) {

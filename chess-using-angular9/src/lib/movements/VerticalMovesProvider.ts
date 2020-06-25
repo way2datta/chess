@@ -1,4 +1,4 @@
-import Point from './../Point';
+import Point from '../Point';
 
 export function getVerticalMoves(position: Point) {
   const { fileIndex, rankIndex } = position;

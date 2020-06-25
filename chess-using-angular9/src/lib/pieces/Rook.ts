@@ -1,5 +1,5 @@
-import { getHorizontalMoves } from '../movements/getHorizontalMoves';
-import { getVerticalMoves } from '../movements/getVerticalMoves';
+import { getHorizontalMoves } from '../movements/HorizontalMoveProvider';
+import { getVerticalMoves } from '../movements/VerticalMovesProvider';
 import IPiece from './IPiece';
 import Point from '../Point';
 
