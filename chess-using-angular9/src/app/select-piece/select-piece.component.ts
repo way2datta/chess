@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import PieceType from "./../../lib/PieceType";
+import { getPieces } from "./../../lib/PieceProvider";
 
 @Component({
   selector: 'app-select-piece',
@@ -22,15 +22,4 @@ export class SelectPieceComponent implements OnInit {
   onPieceSelected(selectedPiece) {
     this.messageEvent.emit(selectedPiece)
   }
-}
-
-export function getPieces() {
-  return [
-    { name: PieceType.King },
-    { name: PieceType.Queen },
-    { name: PieceType.Bishop },
-    { name: PieceType.Horse },
-    { name: PieceType.Rook },
-    { name: PieceType.Pawn },
-  ];
 }

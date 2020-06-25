@@ -19,7 +19,7 @@ export class PieceLocator {
         return new King();
       case PieceType.Pawn:
         return new Pawn();
-      case PieceType.Rook:
+      case PieceType.Horse:
         return new Horse();
       default:
         throw Error('Invalid piece.');

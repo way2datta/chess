@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import Chessboard from "./../../lib/Chessboard";
 
 @Component({
   selector: 'app-board-view',
@@ -6,18 +7,19 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./board-view.component.scss']
 })
 export class BoardViewComponent implements OnInit {
-  fileTitles: any; // TODO: TS Technical debt 
-  rankTitles: any; // TODO: TS Technical debt 
+  fileTitles: string[]; 
+  rankTitles: string[];  
+  
   @Input() selectedPosition: any; // TODO: TS Debt 
   @Input() predictedMoves: any;
-  
   @Output() messageEvent = new EventEmitter<object>();
 
   constructor() { }
 
   ngOnInit(): void {
-    this.rankTitles = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-    this.fileTitles = ['1', '2', '3', '4', '5', '6', '7', '8'];
+    const { fileTitles, rankTitles } = Chessboard;
+    this.rankTitles = rankTitles;
+    this.fileTitles = fileTitles;
   }
 
   getInitialCellCssClasses(fileIndex, rankIndex) {
