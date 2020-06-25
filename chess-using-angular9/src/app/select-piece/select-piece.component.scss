@@ -1,11 +1,13 @@
+@import "./../../assets/variable";
+
 .pieces-list {
     list-style: none;
     padding: 0;
     display: block;
     text-transform: capitalize;
     .selected {
-        color: #fff;
-        background-color: #4caf50;
+        color: $white;
+        background-color: $primary-color;
     }
     li {
         display: inline;
@@ -13,7 +15,7 @@
         min-width: 20px;
         margin: 3px;
         padding: 20px;
-        background-color: gray;
+        background-color:$piece-select-item-bg-color;
         color: aliceblue;
         cursor: pointer;
     }
@@ -25,7 +27,7 @@
     display: flex;
     justify-content: center;
     .error{
-        color: #f00;
+        color: $error-color;
     }
     span{
         text-transform: capitalize;

@@ -22,22 +22,22 @@
         }
         .black {
             background-color: $black;
-            color: #fff;
+            color: $white;
             &.highlight {
                 background-color: rgba($cell-highlight-background-color, 0.666) !important;
             }
             &.highlight:hover {
                 background-color: $black;
             }
-        }
-        .black:hover {
-            color: #fff;
-            background-color: $primary-color !important;
-            border: 1px solid grey;
+            &:hover {
+                color: $white;
+                background-color: $primary-color !important;
+                border: 1px solid grey;
+            }
         }
         .white {
             color: $black;
-            background-color: #fff;
+            background-color: $white;
             &.highlight {
                 background-color: rgba($cell-highlight-background-color, 0.344);
             }
@@ -45,11 +45,11 @@
                 background-color: $white;
                 color: $black;
             }
-        }
-        .white:hover {
-            color: #fff;
-            background-color: $primary-color !important;
-            border: 1px solid grey;
+            &:hover {
+                color: $white;
+                background-color: $primary-color !important;
+                border: 1px solid grey;
+            }
         }
     }
 }
